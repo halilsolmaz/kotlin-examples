@@ -2,6 +2,8 @@
     1.
     Bir fonksiyonun default argümanları olabilir.
 
+    Not: Java da bu özellik yoktur.
+
     2.
     Bir fonksiyon çağrılırken isimli argümanlar verilebilir
 
