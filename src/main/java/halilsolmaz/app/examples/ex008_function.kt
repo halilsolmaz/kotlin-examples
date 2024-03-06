@@ -8,6 +8,7 @@
     Not: Kullanımı çoğu zaman default argümanla anlamlıdır.
 
     3.) Method overloading durumunda "best match" e bakılır. (Bkz: voo())
+
 -----------------------------------------------------------------------------------------------------*/
 
 package halilsolmaz.app.examples
