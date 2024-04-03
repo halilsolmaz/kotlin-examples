@@ -17,11 +17,12 @@
     - String referansına geri dönen fonksiyonlarda String sınıfını kullanmanız gerekmez. String literal oluştururak
     yapınız
 
-    (İleride daha iyisi yazılacaktır)
+    Dizi kullanarak çzöünüz.
 ----------------------------------------------------------------------------------------------------------------------*/
 
 package halilsolmaz.app.homeworks
 // 8 - 3.20
+// .......................................
 fun main() = runtTest();
 
 fun runtTest()
