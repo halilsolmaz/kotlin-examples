@@ -7,24 +7,18 @@
 -----------------------------------------------------------------------------------------------------*/
 
 package halilsolmaz.app.classes
-fun main()
-{
-    val z = Complex(3.4, 5.6)
-    val zc = z.conjugate;
 
-    println("|${z.real} + i.${z.imag}| = ${z.norm}")
-    println("|${zc.real} + i.${zc.imag}| = ${zc.norm}")
-}
-
-class Complex (val real: Double = 0.0, val imag: Double = 0.0) {
+class ImmutableComplex (val real: Double = 0.0, val imag: Double = 0.0) {
     val norm: Double
         get() = kotlin.math.sqrt(real * real + imag * imag)
 
     val length: Double
         get() = norm
 
-    val conjugate: Complex
-        get() = Complex(real, -imag)
+    val conjugate: ImmutableComplex
+        get() = ImmutableComplex(real, -imag)
 
-    //val conjugate: Complex = Complex(real, -imag) // Error, sonsuz döngü
+    //val conjugate: ImmutableComplex = ImmutableComplex(real, -imag) // Error, sonsuz döngü
+
+    override fun toString() = "(%.2f, %.2f)".format(real, imag)
 }

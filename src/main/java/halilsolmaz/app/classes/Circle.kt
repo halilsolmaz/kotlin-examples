@@ -3,32 +3,28 @@
 -----------------------------------------------------------------------------------------------------*/
 
 package halilsolmaz.app.classes
-fun main()
-{
-    val  c = Circle(-3.4)
 
-    println(c.area)
-    println(c.circumference)
-    println("------------------------------")
+import java.awt.geom.Area
+import kotlin.math.PI
+import kotlin.math.abs
 
-    c.r = -4.4
+private const val DELTA = 0.00001
 
-    println(c.area)
-    println(c.circumference)
-    println("------------------------------")
-}
-
-class Circle(r: Double = 0.0) {
-    var r: Double = kotlin.math.abs(r)
+open class Circle(radius: Double = 0.0) {
+    var radius: Double = abs(radius)
         set(value) {
-            field = kotlin.math.abs(value)
+            field = abs(value)
         }
 
     val area : Double
-        get() = Math.PI * r * r
+        get() = PI * radius * radius
 
     val circumference : Double
-        get() = 2 * Math.PI * r
+        get() = 2 * PI * radius
+
+    override fun toString() = "(Radius = %.2f, Area = %.2f, Circumference = %.2f)".format(radius, area, circumference)
+
+    override operator fun equals(other: Any?) = other is Circle && abs(radius - other.radius) < DELTA;
 }
 
 /* Yaklaşık Java karşılığı

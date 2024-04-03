@@ -21,7 +21,7 @@
     6.
     String sınıfının format metodu Java'daki format metoduna benzer.
 
-        String sınıfının format metodu Java'daki format metoduna benzer:
+    String sınıfının format metodu Java'daki format metoduna benzer:
 
     Bazı format karakterleri:
     d       -> decimal tamsayı türü
