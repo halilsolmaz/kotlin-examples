@@ -8,7 +8,7 @@
 
 package halilsolmaz.app.classes
 
-class ImmutableComplex (val real: Double = 0.0, val imag: Double = 0.0) {
+data class ImmutableComplex (val real: Double = 0.0, val imag: Double = 0.0) {
     val norm: Double
         get() = kotlin.math.sqrt(real * real + imag * imag)
 
@@ -19,6 +19,10 @@ class ImmutableComplex (val real: Double = 0.0, val imag: Double = 0.0) {
         get() = ImmutableComplex(real, -imag)
 
     //val conjugate: ImmutableComplex = ImmutableComplex(real, -imag) // Error, sonsuz döngü
+
+    operator fun component3() = norm
+
+    operator fun component4() = conjugate
 
     override fun toString() = "(%.2f, %.2f)".format(real, imag)
 }
