@@ -22,9 +22,13 @@ open class Circle(radius: Double = 0.0) {
     val circumference : Double
         get() = 2 * PI * radius
 
-    override fun toString() = "(Radius = %.2f, Area = %.2f, Circumference = %.2f)".format(radius, area, circumference)
-
+    fun copy() = Circle(radius)
+    operator fun component1() = radius
+    operator fun component2() = area
+    operator fun component3() = circumference
+    override fun hashCode() = radius.hashCode()
     override operator fun equals(other: Any?) = other is Circle && abs(radius - other.radius) < DELTA;
+    override fun toString() = "Radius = %.2f, Area =  %.2f, Circumference = %.2f".format(radius, area, circumference)
 }
 
 /* Yaklaşık Java karşılığı

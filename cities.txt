@@ -1,6 +1,3 @@
-ankara
-istanbul
-izmir
-zonguldak
-bolu
-balıkesir
+aaaa
+bbbbb
+cccc
