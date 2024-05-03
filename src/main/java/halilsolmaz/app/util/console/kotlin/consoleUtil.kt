@@ -1,5 +1,7 @@
 package halilsolmaz.app.util.console.kotlin
 
+import java.math.BigDecimal
+
 fun readInt(prompt: String = "", errMessage: String = "", end: String = "") : Int
 {
     while (true) {
@@ -78,8 +80,35 @@ fun readFloat(prompt: String = "", errMessage: String = "", end: String = "") : 
         }
     }
 }
+
+fun readChar(prompt: String = "", errorMessage: String = "", end: String = "") : Char
+{
+    while (true) {
+        val str = readString(prompt)
+
+        if (str.length == 1)
+            return str[0];
+
+        print("$errorMessage $end")
+    }
+}
+
 fun readString(prompt: String = "", errMessage: String = "") : String
 {
     print(prompt)
     return readln().toString()
+}
+
+fun readBigDecimal(prompt: String, errMessage: String = "", end: String = "") : BigDecimal
+{
+    while (true) {
+        try {
+            print(prompt + end)
+
+            return BigDecimal(readln())
+        }
+        catch (ignore: NumberFormatException) {
+            print(errMessage + end)
+        }
+    }
 }
